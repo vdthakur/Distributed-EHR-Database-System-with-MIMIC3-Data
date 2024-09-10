@@ -43,7 +43,7 @@ The database manager effectively uses PyMySQL to connect to the created database
 * Bulk Insertions
 * Updates
 * Deletions
-*Exit the database manager
+* Exit the database manager
 
 Once the user chooses one of the four options, they have the option to interact with one of the following tables: admissions, diagnoses, chartevents, labevents, and patients.
 
