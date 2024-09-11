@@ -1,5 +1,4 @@
-# Distributed-Electronic-Health-Record-System-and-Web-Application-Based-on-MIMIC-111-Data
-A Distributed Electronic Health Record System and Web-Application Based on MIMIC-3 Data
+# A Distributed Electronic Health Record System and Web-Application Based on MIMIC-3 Data
 
 In this project, we’re handling Electronic Health Record (EHR) data, which is typically too large to be stored in a single database. Effective management of EHR data requires scalability and careful organization of sensitive and comprehensive patient information. Our Project aims to leverage MySQL to build a distributed database system for the MIMIC III dataset. Furthermore, we aim to develop an efficient Database manager that allows for the execution of create, read, update, and delete functions on the data within the databases. Lastly, we aim to utilize this data to develop a Intensive Care tool that provides a biostatistical overview of ICU patients’ medical data to analyze and draw conclusions about new ICU admitted patients.
 
