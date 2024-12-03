@@ -112,38 +112,117 @@ Finally, once we upload the data we can see a message whether the patient inform
 
 This project helped us become proficient in MySQL for data management and retrieval. We also gained a good understanding of the entire pipeline of creating databases and tables to integrate them into frontend applications. Although we learned a lot, we encountered some challenges in the process. For example, understanding the data structure and selecting the most relevant CSV files for our Intensive Care tool proved to be difficult as we had to carefully look through numerous CSV files to identify the most relevant data. In addition, establishing a hashing key for data retrieval in the DB Manager and Front End Application provided some difficulty. After trial and error, we decided that using the last digit of the subject_id as a hash key was the most efficient method as both of our applications operate based on the subject_id.
 
-## Implementation Steps
+# Implementation Steps
 
-The existing MySQL URI assumes a username “root”, and a password “Dsci-551”. Please set up your MySQL with these credentials or replace the relevant parts of the URI’s found in the code files with your credentials.
+## MySQL Setup
 
-Host ="localhost", user="root", password="Dsci-551"
+The existing MySQL URI assumes the following credentials:
+- **Host**: `localhost`
+- **User**: `root`
+- **Password**: `Dsci-551`
 
-### Import Data:
+Please configure your MySQL with these credentials or update the relevant parts of the URI in the provided code files to match your own credentials.
 
-Project was built using local MySQL, please utilize local MySQL. All files should be executed within the directory they were downloaded from. Please do not remove files from their directories.
+---
 
-1) Download ‘ImportData’ directory from Google Drive. This file contains our CSV files and python scripts
-2) The file path defined in the importcsv.py file that imports data works on the fact that the CSV files are in the same directory as the scripts “ImportData” (which they are)
-3) This directory contains a file “sqlscript.py” which contains our table definitions as well as database creation functions.
-4) If applicable, replace the URI structure with your MySQL username and password in the files “sqlscript.py” and “importcsv.py” a) Existing MySQL URI assumes a username “root”, and a password “Dsci-551”
-5) Execute the python file “sqlscript.py” within the ImportData directory to create the databases and tables
-6) Execute the python file (importcsv.py) within the ImportData directory such that it is able to read the CSV files in this directory
-7) This python script will process each CSV file in chunks and insert the data based on the last digit of the ‘subject_id’ (0-9 resulting in 10 databases) within each CSV file
-8) The data has now been successfully hashed to the correct database
+## Import Data
 
-### Database Manager:
+The project is built using **local MySQL**. Please ensure local MySQL is used for setup. All files should be executed from their downloaded directories—do not move files to other locations.
 
-1) Download ‘DBManager’ directory from Drive
-2) If applicable, replace the URI structure with your MySQL username and password in the dbmanager.py file. a) Existing MySQL URI assumes a username “root”, and a password “Dsci-551”
-3) Execute the dbmanager.py within the ‘DBManager’ directory where it is located
-4) DB Manager will be implemented and ready to use
+### Steps:
 
-### Front End Application:
+1. **Download the `ImportData` Directory**:
+   - Obtain the `ImportData` directory from Google Drive. This directory contains:
+     - CSV files
+     - Python scripts (`importcsv.py` and `sqlscript.py`)
 
-1) Download ‘FrontEndApplication’ directory from Drive
-2) If applicable, replace the Username and Password structure with your MySQL username and password in the IC_Tool.py file. a) Existing MySQL URI assumes a username “root”, and a password “Dsci-551”
-3) Install all required packages using pip install requirements or other commands suitable for your Python environment.
-4) Run the python file within the ‘FrontEndApplication’ directory using Streamlit command - streamlit run IC_Tool.py The application will open on the default browser. It is recommended to use Anaconda Prompt with Jupyter Notebook installed. Or have the streamlit package installed and added in the Python path.
+2. **File Path Configuration**:
+   - The `importcsv.py` script relies on the CSV files being in the same directory as the scripts (`ImportData`). Ensure this structure is maintained.
+
+3. **Table Definitions and Database Creation**:
+   - The file `sqlscript.py` contains table definitions and functions to create the necessary databases.
+
+4. **Update MySQL Credentials**:
+   - If needed, replace the default MySQL URI with your own credentials in both `sqlscript.py` and `importcsv.py`.
+     - **Default Credentials**:
+       - Username: `root`
+       - Password: `Dsci-551`
+
+5. **Create Databases and Tables**:
+   - Run `sqlscript.py` within the `ImportData` directory to create the databases and tables.
+
+6. **Import Data**:
+   - Execute `importcsv.py` in the same directory to read and process the CSV files.
+   - The script:
+     - Processes each CSV file in chunks.
+     - Hashes and distributes the data into 10 separate databases based on the last digit of the `subject_id` (0-9).
+
+7. **Completion**:
+   - Once complete, the data will be correctly hashed and inserted into the respective databases.
+
+---
+
+## Database Manager
+
+### Steps:
+
+1. **Download the `DBManager` Directory**:
+   - Obtain the `DBManager` directory from Google Drive.
+
+2. **Update MySQL Credentials**:
+   - Modify the MySQL URI in `dbmanager.py` if needed, using your credentials.
+     - **Default Credentials**:
+       - Username: `root`
+       - Password: `Dsci-551`
+
+3. **Run DB Manager**:
+   - Execute the `dbmanager.py` script within the `DBManager` directory.
+
+4. **Outcome**:
+   - The database manager will be ready for use.
+
+---
+
+## Front-End Application
+
+### Steps:
+
+1. **Download the `FrontEndApplication` Directory**:
+   - Obtain the `FrontEndApplication` directory from Google Drive.
+
+2. **Update MySQL Credentials**:
+   - Replace the username and password in `IC_Tool.py` with your own credentials if necessary.
+     - **Default Credentials**:
+       - Username: `root`
+       - Password: `Dsci-551`
+
+3. **Install Dependencies**:
+   - Run the following command to install required packages:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Launch the Application**:
+   - Execute the following command to start the front-end application:
+     ```bash
+     streamlit run IC_Tool.py
+     ```
+   - The application will automatically open in your default browser.
+
+5. **Recommended Environment**:
+   - Use **Anaconda Prompt** with Jupyter Notebook installed, or ensure the `streamlit` package is properly configured in your Python path.
+
+---
+
+## Summary
+
+Following these steps will ensure:
+- Successful setup of the MySQL database.
+- Proper import and distribution of data across databases.
+- Implementation of the database manager.
+- Deployment of the front-end application for user interaction.
+
+---
 
 ## References
 
