@@ -133,7 +133,7 @@ The project is built using **local MySQL**. Please ensure local MySQL is used fo
 
 1. **Download the `ImportData` Directory**:
    - Obtain the `ImportData` directory from Google Drive. This directory contains:
-     - CSV files
+     - CSV files (not included in this repository to comply with the PhysioNet Credentialed Data Use Agreement)
      - Python scripts (`importcsv.py` and `sqlscript.py`)
 
 2. **File Path Configuration**:
